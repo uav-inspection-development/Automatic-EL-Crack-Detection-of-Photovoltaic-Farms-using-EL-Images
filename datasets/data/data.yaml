@@ -1,0 +1,4 @@
+train: F:/last/codeseg/code/datasets/data/train
+val: F:/last/codeseg/code/datasets/data/val
+test: F:/last/codeseg/code/datasets/data/test
+
