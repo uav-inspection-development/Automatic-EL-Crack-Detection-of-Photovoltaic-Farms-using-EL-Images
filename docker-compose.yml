@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  yolo-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./src:/app/src
+      - ./ultralytics:/app/ultralytics
+      - ./datasets:/app/datasets
+      - ./weights:/app/weights
+      - ./tempDir:/app/tempDir
+    ports:
+      - "5000:5000"
+    environment:
+      - ENV=development
+    command: python3 src/ui.py
+
+networks:
+  default:
+    driver: bridge
