@@ -67,7 +67,7 @@ def load_default_image():
     Returns:
         Image: 返回默认图片对象。
     """
-    ini_image = abs_path("icon/ini-image.png")
+    ini_image = abs_path("../icon/ini-image.png")
     return Image.open(ini_image)
 
 

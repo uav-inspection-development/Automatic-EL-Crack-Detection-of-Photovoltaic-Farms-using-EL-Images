@@ -2,6 +2,9 @@ import sys
 import os
 import subprocess
 
+# 设置环境变量以避免 OpenMP 错误
+os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
+
 from QtFusion.path import abs_path
 
 

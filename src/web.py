@@ -217,7 +217,7 @@ class Detection_UI:
         self.timenow = 0
 
         # 初始化日志数据保存路径
-        self.saved_log_data = abs_path("tempDir/log_table_data.csv", path_type="current")
+        self.saved_log_data = abs_path("../tempDir/log_table_data.csv", path_type="current")
 
         # 如果在 session state 中不存在logTable，创建一个新的LogTable实例
         if 'logTable' not in st.session_state:
@@ -237,7 +237,7 @@ class Detection_UI:
 
         self.model = st.session_state['model']
         # 加载训练的模型权重
-        self.model.load_model(model_path=abs_path("weights/yolov8s.pt", path_type="current"))
+        self.model.load_model(model_path=abs_path("../weights/yolov8s.pt", path_type="current"))
         # 为模型中的类别重新分配颜色
         self.colors = [[random.randint(0, 255) for _ in range(3)] for _ in
                        range(len(self.model.names))]
@@ -287,9 +287,9 @@ class Detection_UI:
                                range(len(self.model.names))]
         elif model_file_option == "默认":
             if self.model_type == "检测任务":
-                self.model.load_model(model_path=abs_path("./yolo11s.pt", path_type="current"))
+                self.model.load_model(model_path=abs_path("../weights/yolo11s.pt", path_type="current"))
             elif self.model_type == "分割任务":
-                self.model.load_model(model_path=abs_path("./yolo11s-seg.pt", path_type="current"))
+                self.model.load_model(model_path=abs_path("../weights/yolo11s-seg.pt", path_type="current"))
             # 为模型中的类别重新分配颜色
             self.colors = [[random.randint(0, 255) for _ in range(3)] for _ in
                            range(len(self.model.names))]
@@ -737,7 +737,7 @@ class Detection_UI:
         """ 运行检测系统。 """
         # st.title(self.title) # 显示系统标题
         st.write("--------")
-        st.write("———————————————————————————————————————————Vision-Studio————————————————————————————————————————————")
+        st.write("Automatic EL and Thermal Detection System")
         st.write("--------")
         # 插入一条分割线
 
