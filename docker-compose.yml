@@ -12,7 +12,7 @@ services:
       - ./weights:/app/weights
       - ./tempDir:/app/tempDir
     ports:
-      - "5000:5000"
+      - "5000:8501"
     environment:
       - ENV=development
     command: python3 src/ui.py
