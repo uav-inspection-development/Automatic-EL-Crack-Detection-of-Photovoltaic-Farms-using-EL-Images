@@ -747,6 +747,7 @@ class Detection_UI:
         # 在第一列设置显示模式的选择
         with col1:
             self.display_mode = st.radio("单/双画面显示设置", ["叠加显示", "对比显示"])
+            # TODO:
             # 根据显示模式创建用于显示视频画面的空容器
             if self.display_mode == "叠加显示":
                 self.image_placeholder = st.empty()

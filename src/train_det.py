@@ -34,7 +34,7 @@ if __name__ == '__main__':  # 确保该模块被直接运行时才执行以下�
             yaml.safe_dump(data, file, sort_keys=False)
 
     # 注意！不同模型大小不同，对设备等要求不同，如果要求较高的模型【报错】则换其他模型测试即可
-    model = YOLO(model='../ultralytics/cfg/models/v11/yolo11.yaml', task='detect').load('../weights/yolo11s.pt')  # 加载预训练的YOLOv11模型
+    model = YOLO(model='./ultralytics/cfg/models/v11/yolo11.yaml', task='detect').load('./weights/yolo11s.pt')  # 加载预训练的YOLOv11模型
     # model = YOLO(model=r'F:\last\codeseg\200+种YOLOv11检测分割算法改进源码配置文件大全\改进YOLOv11检测模型配置文件\yolo11-DBB.yaml', task='detect').load('./yolo11s.pt') # yolo11-efficientViT.yaml、yolo11-ADown.yaml、...
     results2 = model.train(  # 开始训练模型
         data=data_path,  # 指定训练数据的配置文件路径

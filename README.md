@@ -21,3 +21,11 @@ Downloading https://ultralytics.com/assets/Arial.ttf to 'C:\Users\ad\AppData\Roa
 ```
 
 If this prompt appears, it means the configuration file is being downloaded automatically. Occasionally, a timeout may occur. It is recommended to copy the "Arial.ttf" file from the fonts folder to the path shown on the right and rerun the code (note that the path shown on the right is the path displayed on your computer; the example here is from my computer, and the path may vary on different computers).
+
+## Milestones
+
+- [x] YoloV11 Model Training and Testing Completed
+- [ ] Separate the detection UI from web.py to web.py and detection_el.py detection_thermal.py
+- [ ] Adjust the layout of the detection interface from ui.py and corresponding stylesheet ui_style.py (considering automatic layout adjustment)
+- [ ] Refer to YoloV5 project which is about thermal detection and add the corresponding thermal detection function to the project (add new file detection_thermal.py)
+- [ ] Gradio interface replanting and testing (both detection and training app.py)
