@@ -1,3 +1,4 @@
+#run this : docker build -t solarweb . -f .\Dockerfile
 #if error,try thiscommand first: docker pull nvidia/cuda:11.2.2-cudnn8-runtime-ubuntu20.04
 FROM nvidia/cuda:11.2.2-cudnn8-runtime-ubuntu20.04
 
@@ -11,11 +12,19 @@ RUN sed -i 's|http://archive.ubuntu.com/ubuntu/|http://mirrors.aliyun.com/ubuntu
     add-apt-repository ppa:deadsnakes/ppa && \
     apt-get update && \
     apt-get install -y python3.10 python3.10-distutils && \
-    curl -sS https://bootstrap.pypa.io/get-pip.py | python3.10 && \
-    export PATH=/usr/local/bin:$PATH && \
-    ln -s /usr/local/bin/pip3 /usr/bin/pip
+    curl -sS https://bootstrap.pypa.io/get-pip.py | python3.10
 
-RUN pip install --upgrade pip && \
+RUN apt-get install -y python3-pip
+
+RUN export PATH=/usr/local/bin:$PATH && \
+    pip install --upgrade pip
+
+RUN export PATH=/usr/local/bin:$PATH && \
+    pip install --upgrade setuptools
+
+RUN export PATH=/usr/local/bin:$PATH && \
+    pip install --upgrade pip setuptools wheel && \
+    pip install html5lib && \
     pip config set global.index-url https://mirrors.aliyun.com/pypi/simple/
 
 # Set python3.10 as the default python
